@@ -1,0 +1,412 @@
+/*
+Theme Name: MCS Theme
+Theme URI: http://wiki.mozilla.org/MCS
+Description: Leo McArdle's MCS Theme
+Version: 1.0
+Author: Leo McArdle
+Author URI: http://wiki.mozila.org/User:Leo_McArdle
+*/
+
+@import "css/normalize.css";
+@import "css/960.css";
+@import "css/orbit-1.2.3.css";
+
+/* =============================================================================
+   General Stuff
+   ========================================================================== */
+
+body {
+	font-size: 16px;
+	line-height: 24px;
+	font-family: Georgia;
+	color: #4b4742;
+	/*background: url(../baseline.png);*/
+	background: url("img/background.png") repeat-x;
+	border-top: 2px solid #676767;
+}
+
+a, a:link, a:visited, a:active, a:visited {
+	color: #447bc4;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #39508c;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1, a.title, h2, h3, h4, h5, h6 {
+	margin: 0;
+	font-weight: normal;
+	color: #484848;
+}
+
+h1.title {
+	font-size: 39px;
+	line-height: 48px;
+	display: inline;
+}
+
+h1, a.title {
+	font-size: 31px;
+	line-height: 48px;
+}
+
+h2 {
+	font-size: 25px;
+	line-height: 48px;
+}
+
+h3, h4, h5, h6 {
+	font-size: 20px;
+	line-height: 24px;
+}
+
+p {
+	margin: 0 0 24px;
+	color: #666666;
+	text-align: justify;
+}
+
+small {
+	font-size: 12px;
+}
+
+/* =============================================================================
+   Site Header
+   ========================================================================== */
+
+body > header div.logo {
+	padding: 12px 0;
+	font: 24px "Trebuchet MS";
+}
+
+body > header div.logo img {
+	height: 48px;
+	width: auto;
+	float: left;
+	margin: 0 12px 0 0;
+}
+
+body > header div.tab {
+	float: right;
+	font: 12px "Trebuchet MS";
+}
+
+body > header div.tab ul {
+	margin: 10px;
+	padding: 0;
+	float: left;
+	list-style: none;
+}
+
+body > header div.tab ul li {
+	display: inline;
+	margin: 0 5px;
+}
+
+body > header div.tab a.mozilla {
+	float: right;
+	display: block;
+	height: 49px;
+	width: 118px;
+	background: url(img/mozilla-tab.png) 100% 0 no-repeat;
+	text-indent: -200px;
+	overflow: hidden;
+}
+
+body > header nav {
+	background: -moz-linear-gradient(#2E89CA, #1B5898);
+	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), 0 -2px 0 rgba(0, 0, 0, 0.5) inset;
+	border-radius: 5px;
+	font-family: "Trebuchet MS";
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+	margin-bottom: 24px;
+	padding-bottom: 2px;
+	overflow: hidden;
+	font-size: 12px;
+}
+
+body > header nav a:link, body > header nav a:visited, body > header nav a:active {
+	color: #ffffff;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+body > header nav > ul {
+	padding: 0;
+	margin: 0;
+	display: inline;
+}
+
+body > header nav > ul > li {
+	float: left;
+}
+
+body > header nav > ul > li:first-child a {
+	border-radius: 5px 0 0 5px;
+}
+
+body > header nav > ul > li:last-child {
+	border-right-color: rgba(255, 255, 255, 0.15);
+    border-right: 1px solid #5373B0;
+}
+
+body > header nav > ul > li > a {
+	display: inline-block;
+	padding: 9px 20px;
+    border-left-color: rgba(255, 255, 255, 0.15);
+    border-right-color: rgba(0, 0, 0, 0.2);
+    border-left: 1px solid #5373B0;
+    border-right: 1px solid #2F508C;
+}
+
+body > header nav li a:hover {
+	background: #1B5898;
+	text-decoration: none;
+	text-shadow: none;
+}
+
+body > header nav li:hover > ul {
+	display: block;
+}
+
+body > header nav li ul {
+	display: none;
+	position: absolute;
+	z-index: 2;
+}
+
+body > header nav a:active {
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+}
+
+body > header nav form {
+	display: inline;
+}
+
+body > header nav form input {
+    background: url(img/search.png) no-repeat scroll 8px center #FFFFFF;
+    border: 0 none;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.4) inset;
+    float: right;
+    font: 16px "Trebuchet MS",sans-serif;
+    padding: 6px 6px 6px 32px;
+    margin: 5px;
+    width: 172px;
+}
+
+body > header nav input:-moz-placeholder {
+    color: #AAAAAA;
+}
+
+/* =============================================================================
+   Article Header
+   ========================================================================== */
+
+article > header {
+	overflow: hidden;
+}
+
+article > header h1 {
+	font-size: 39px;
+	line-height: 48px;
+	display: inline;
+}
+
+article > header address {
+	float: right;
+	text-align: right;
+	font-size: 12px;
+	font-style: normal;
+	margin-left: 10px;
+}
+
+article > header address div {
+	float: right;
+}
+
+article > header address a {
+	display: block;
+	text-align: right;
+	font-size: 16px;
+}
+
+article > header address img {
+	height: 48px;
+	width: auto;
+	margin-left: 10px;
+	float: right;
+}
+
+article > header div {
+	font-size: 12px;
+}
+
+/* =============================================================================
+   Article Footer
+   ========================================================================== */
+
+article > footer > ul {
+	list-style: none;
+	margin: 0 0 24px;
+	padding: 0;
+	font-size: 12px;
+	text-align: right;
+}
+
+article > footer > ul > li {
+	display: inline;
+}
+
+/* =============================================================================
+   Comments
+   ========================================================================== */
+
+#comments article {
+	background: #ffffff;
+	border: 1px solid #d7d9e8;
+	border-radius: 6px;
+	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05), 0 -2px 0 rgba(0, 0, 0, 0.05) inset;
+	padding: 11px 16px 0;
+	margin-bottom: 24px;
+	text-align: justify;
+}
+
+#comments > article:first-of-type {
+	margin-top: 12px;
+}
+
+#comments article > header {
+	text-align: left;
+	font-size: 12px;
+	font-style: normal;
+	overflow: visible;
+}
+
+#comments article > header a.comment-edit-link {
+	float: right;
+}
+
+#comments article > header img {
+	height: 72px;
+	width: auto;
+	float: left;
+	margin-right: 8px;
+}
+
+#comments article p:last-of-type {
+	margin-bottom: 11px;
+}
+
+/* =============================================================================
+   Sidebar
+   ========================================================================== */
+
+div.sidebar {
+	background: #ffffff;
+	border: 1px solid #d7d9e8;
+	border-radius: 6px;
+	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05), 0 -2px 0 rgba(0, 0, 0, 0.05) inset;
+	padding: 11px 16px 12px;
+	margin: 0 0 35px;
+}
+
+div.sidebar h1 {
+	font-family: "Trebuchet MS";
+	font-size: 20px;
+	line-height: 24px;
+	margin-bottom: 12px;
+}
+
+div.sidebar ul, div.sidebar ol {
+	margin: 0;
+	padding: 0 0 0 15px;
+}
+
+/* =============================================================================
+   Footer
+   ========================================================================== */
+
+body > footer {
+	background: url(img/footer_background.png);
+	margin-top: -119px;
+	padding: 144px 0 24px;
+	color: #476fbe;
+	font-size: 12px;
+}
+
+body > footer a:link, footer a:visited {
+	color: #669be1;
+}
+
+body > footer a:hover, footer a:active {
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+body > footer div.notice {
+	text-align: justify;
+}
+
+body > footer div.notice img {
+	width: 220px;
+	height: auto;
+}
+
+/* =============================================================================
+   Archive/Front Page specific
+   ========================================================================== */
+
+a.title:hover {
+	text-decoration: none;
+}
+
+div.archive article p, div.home article p {
+	margin-bottom: 0;
+}
+
+/* =============================================================================
+   Front Page specific
+   ========================================================================== */
+
+div.home div.featured > div {
+    display: none;
+}
+
+div.home div.featured div.orbit-wrapper {
+	display: block;
+    margin-bottom: 24px;
+    background: #ffffff;
+    overflow: clip;
+}
+
+div.home div.featured div.orbit {
+	border: 1px solid #c9ddf2;
+    border-radius: 5px;
+    box-shadow: 0 -2px 0 rgba(204, 223, 243, 0.3) inset, 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+/* =============================================================================
+   Wordpress stuff
+   ========================================================================== */
+
+.centered {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignright {
+	float: right;
+	margin-left: 15px;
+}
+
+.alignleft {
+	float: left;
+	margin-right: 15px;
+}
