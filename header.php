@@ -1,10 +1,14 @@
 <!doctype html>
-<html>
+<html <?php language_attributes(); ?>>
     <head>
+        <meta charset="<?php bloginfo( 'charset' ); ?>">
         <title><?php bloginfo("name"); ?><?php wp_title(); ?></title>
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
         <link rel="stylesheet" href="<?php bloginfo("stylesheet_url"); ?>">
-        <script src="<?php bloginfo("template_url"); ?>/js/jquery-1.5.1.min.js" type="text/javascript"></script>
-        <script src="<?php bloginfo("template_url"); ?>/js/jquery.orbit-1.2.3.min.js" type="text/javascript"></script>
+        <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+        <?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
         <?php wp_head(); ?>
     </head>
     <body>
@@ -21,19 +25,24 @@
                         <a class="mozilla" href="http://www.mozilla.org/">visit mozilla</a>
                     </div>
 
-                    <div class="logo">
-                        <img src="<?php bloginfo("template_url"); ?>/img/mozilla_community_logo.svg">
+                    <a class="logo" href="<?php echo home_url(); ?>">
+                        <img src="<?php bloginfo("template_url"); ?>/img/mozilla_antartica_logo.svg">
                         <h1><?php bloginfo("name"); ?></h1>
-                    </div>
+                    </a>
 
                     <nav>
-                        <ul>
-                            <li><a href="<?php echo get_option("home"); ?>">Home</a></li>
-                            <?php wp_list_pages( array( "depth" => 0, "title_li" => "", "link_before" => "", "link_after" => "" ) ); ?>
-                        </ul>
+                        <?php wp_nav_menu( array(
+                            'container'       => false,
+                            'menu_class'      => false,
+                            'fallback_cb'     => 'page_menu_awesome',
+                            'depth'           => 1,
+                            'walker'          => false
+                        )); ?>
                         <?php get_search_form(); ?>
                     </nav>
 
                 </div>
             </div>
         </header>
+        
+        <div class="container_12">

@@ -1,8 +1,8 @@
 /*
-Theme Name: MCS Theme
+Theme Name: Mozilla Antarctica Theme
 Theme URI: http://wiki.mozilla.org/MCS
-Description: Leo McArdle's MCS Theme
-Version: 1.0
+Description: Mozilla Antarctica Theme made by Leo McArdle
+Version: 0.9
 Author: Leo McArdle
 Author URI: http://wiki.mozila.org/User:Leo_McArdle
 */
@@ -16,11 +16,8 @@ Author URI: http://wiki.mozila.org/User:Leo_McArdle
    ========================================================================== */
 
 body {
-	font-size: 16px;
-	line-height: 24px;
-	font-family: Georgia;
+	font: 16px/24px Georgia, serif;
 	color: #4b4742;
-	/*background: url(../baseline.png);*/
 	background: url("img/background.png") repeat-x;
 	border-top: 2px solid #676767;
 }
@@ -79,25 +76,39 @@ small {
    Site Header
    ========================================================================== */
 
-body > header div.logo {
-	padding: 12px 0;
-	font: 24px "Trebuchet MS";
+body > header {
+	font: 12px/24px "Trebuchet MS", sans-serif;
 }
 
-body > header div.logo img {
-	height: 48px;
+body > header a.logo {
+	padding: 12px 0;
+	display: block;
+}
+
+body > header a.logo:hover {
+	text-decoration: none;
+}
+
+body > header a.logo h1 {
+	font-size: 48px;
+	line-height: 96px;
+}
+
+body > header a.logo img {
+	height: 96px;
 	width: auto;
 	float: left;
-	margin: 0 12px 0 0;
+	margin-right: 24px;
 }
 
 body > header div.tab {
 	float: right;
-	font: 12px "Trebuchet MS";
+	direction: ltr;
 }
 
 body > header div.tab ul {
-	margin: 10px;
+	margin: 5px;
+	margin-right: 10px;
 	padding: 0;
 	float: left;
 	list-style: none;
@@ -105,7 +116,7 @@ body > header div.tab ul {
 
 body > header div.tab ul li {
 	display: inline;
-	margin: 0 5px;
+	padding: 0 5px;
 }
 
 body > header div.tab a.mozilla {
@@ -119,15 +130,16 @@ body > header div.tab a.mozilla {
 }
 
 body > header nav {
-	background: -moz-linear-gradient(#2E89CA, #1B5898);
+	background: #2E89CA;
+	background: -moz-linear-gradient(top, #2E89CA, #1B5898);
+	background: -webkit-gradient(linear, left top, left bottom, from(#2E89CA), to(#1B5898));
+	background: -o-linear-gradient(top, #2E89CA, #1B5898);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2E89CA', endColorstr='#1B5898');
 	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), 0 -2px 0 rgba(0, 0, 0, 0.5) inset;
 	border-radius: 5px;
-	font-family: "Trebuchet MS";
 	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
 	margin-bottom: 24px;
-	padding-bottom: 2px;
 	overflow: hidden;
-	font-size: 12px;
 }
 
 body > header nav a:link, body > header nav a:visited, body > header nav a:active {
@@ -138,7 +150,6 @@ body > header nav a:link, body > header nav a:visited, body > header nav a:activ
 
 body > header nav > ul {
 	padding: 0;
-	margin: 0;
 	display: inline;
 }
 
@@ -155,9 +166,9 @@ body > header nav > ul > li:last-child {
     border-right: 1px solid #5373B0;
 }
 
-body > header nav > ul > li > a {
+body > header nav a {
 	display: inline-block;
-	padding: 9px 20px;
+	padding: 10px 20px;
     border-left-color: rgba(255, 255, 255, 0.15);
     border-right-color: rgba(0, 0, 0, 0.2);
     border-left: 1px solid #5373B0;
@@ -170,16 +181,6 @@ body > header nav li a:hover {
 	text-shadow: none;
 }
 
-body > header nav li:hover > ul {
-	display: block;
-}
-
-body > header nav li ul {
-	display: none;
-	position: absolute;
-	z-index: 2;
-}
-
 body > header nav a:active {
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
 }
@@ -188,16 +189,16 @@ body > header nav form {
 	display: inline;
 }
 
-body > header nav form input {
+body > header nav input {
     background: url(img/search.png) no-repeat scroll 8px center #FFFFFF;
     border: 0 none;
     border-radius: 4px 4px 4px 4px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.4) inset;
     float: right;
-    font: 16px "Trebuchet MS",sans-serif;
+    font-size: 16px;
     padding: 6px 6px 6px 32px;
-    margin: 5px;
-    width: 172px;
+    margin: 5px 5px 7px;
+    width: 170px;
 }
 
 body > header nav input:-moz-placeholder {
@@ -243,64 +244,36 @@ article > header address img {
 	float: right;
 }
 
-article > header div {
+article > header time {
 	font-size: 12px;
+	display: block;
 }
 
 /* =============================================================================
    Article Footer
    ========================================================================== */
 
-article > footer > ul {
+article > footer ul {
 	list-style: none;
 	margin: 0 0 24px;
 	padding: 0;
 	font-size: 12px;
 	text-align: right;
+	overflow: hidden;
+	clear: both;
 }
 
-article > footer > ul > li {
+article > footer li {
 	display: inline;
+	margin-right: 10px;
 }
 
-/* =============================================================================
-   Comments
-   ========================================================================== */
-
-#comments article {
-	background: #ffffff;
-	border: 1px solid #d7d9e8;
-	border-radius: 6px;
-	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05), 0 -2px 0 rgba(0, 0, 0, 0.05) inset;
-	padding: 11px 16px 0;
-	margin-bottom: 24px;
-	text-align: justify;
+article > footer li:last-child {
+	margin-right: 0;
 }
 
-#comments > article:first-of-type {
-	margin-top: 12px;
-}
-
-#comments article > header {
-	text-align: left;
-	font-size: 12px;
-	font-style: normal;
-	overflow: visible;
-}
-
-#comments article > header a.comment-edit-link {
-	float: right;
-}
-
-#comments article > header img {
-	height: 72px;
-	width: auto;
+article > footer li:first-child, article > footer li:nth-child(2), article > footer li:nth-child(3)  {
 	float: left;
-	margin-right: 8px;
-}
-
-#comments article p:last-of-type {
-	margin-bottom: 11px;
 }
 
 /* =============================================================================
@@ -314,12 +287,11 @@ div.sidebar {
 	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05), 0 -2px 0 rgba(0, 0, 0, 0.05) inset;
 	padding: 11px 16px 12px;
 	margin: 0 0 35px;
+	overflow: hidden;
 }
 
 div.sidebar h1 {
-	font-family: "Trebuchet MS";
-	font-size: 20px;
-	line-height: 24px;
+	font: 20px/24px "Trebuchet MS", sans-serif;
 	margin-bottom: 12px;
 }
 
@@ -328,34 +300,56 @@ div.sidebar ul, div.sidebar ol {
 	padding: 0 0 0 15px;
 }
 
+div.sidebar input {
+	width: 178px;
+}
+
 /* =============================================================================
    Footer
    ========================================================================== */
 
 body > footer {
 	background: url(img/footer_background.png);
-	margin-top: -119px;
+	margin-top: -95px;
 	padding: 144px 0 24px;
 	color: #476fbe;
-	font-size: 12px;
+	font-size: 14px;
 }
 
-body > footer a:link, footer a:visited {
+body > footer a:link, body > footer a:visited {
 	color: #669be1;
 }
 
-body > footer a:hover, footer a:active {
+body > footer a:hover, body > footer a:active {
 	color: #ffffff;
 	text-decoration: underline;
 }
 
-body > footer div.notice {
+body > footer div.legal_notice {
 	text-align: justify;
+	font-size: 12px;
+	padding-right: 80px;
 }
 
-body > footer div.notice img {
-	width: 220px;
+body > footer div.legal_notice img {
+	width: 100%;
+	margin-bottom: 24px;
 	height: auto;
+}
+
+body > footer h1 {
+	color: #ffffff;
+	font: bold 16px "Trebuchet MS", sans-serif;
+	text-transform: uppercase;
+}
+
+body > footer div > ul {
+	padding: 0;
+	list-style: none;
+}
+
+body > footer ul ul {
+	padding-left: 20px;
 }
 
 /* =============================================================================
@@ -366,47 +360,109 @@ a.title:hover {
 	text-decoration: none;
 }
 
-div.archive article p, div.home article p {
+article.teaser p:last-of-type {
 	margin-bottom: 0;
 }
 
-/* =============================================================================
-   Front Page specific
-   ========================================================================== */
-
-div.home div.featured > div {
-    display: none;
+div.grid_9 > footer ul {
+	list-style: none;
+	padding: 0;
+	text-align: center;
+	overflow: hidden;
 }
 
-div.home div.featured div.orbit-wrapper {
-	display: block;
-    margin-bottom: 24px;
-    background: #ffffff;
-    overflow: clip;
+div.grid_9 > footer li {
+	display: inline;
 }
 
-div.home div.featured div.orbit {
-	border: 1px solid #c9ddf2;
-    border-radius: 5px;
-    box-shadow: 0 -2px 0 rgba(204, 223, 243, 0.3) inset, 0 0 1px rgba(0, 0, 0, 0.1);
+div.grid_9 > footer li:first-child {
+	float: left;
+}
+
+div.grid_9 > footer li:last-child {
+	float: right;
 }
 
 /* =============================================================================
    Wordpress stuff
    ========================================================================== */
 
-.centered {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+.alignnone {
+    margin: 4px 20px 20px 0;
+}
+
+.aligncenter, div.aligncenter {
+    display:block;
+    margin: 5px auto 5px auto;
 }
 
 .alignright {
-	float: right;
-	margin-left: 15px;
+    float:right;
+    margin: 4px 0 20px 20px;
 }
 
 .alignleft {
-	float: left;
-	margin-right: 15px;
+    float:left;
+    margin: 4px 20px 20px 0;
+}
+
+.aligncenter {
+    display: block;
+    margin: 12px auto 12px auto;
+}
+
+a img.alignright {
+    float:right;
+    margin: 4px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 4px 20px 20px 0;
+}
+
+a img.alignleft {
+    float:left;
+    margin: 4px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin:0;
+    max-width: 98.5%;
+    padding:0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size:14px;
+    line-height:17px;
+    margin:0;
+    padding:0 4px 5px;
 }

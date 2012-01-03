@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-        <div class="container_12">
             <div class="grid_9">
                 <?php if (have_posts()) : ?>
                 <?php while (have_posts()) : the_post(); ?>
@@ -11,13 +10,27 @@
                             <div>Written by: <?php the_author_posts_link(); ?></div>
                         </address>
                         <div>
-                            <time><?php the_time(get_option('date_format')); ?> at <?php the_time('g:i a'); ?></time>
-                            <span class="tags">Categories: <?php the_category(', '); ?> <?php the_tags(); ?></span>
+                            <time><?php the_time(get_option('date_format')); ?></time>
                         </div>
                     </header>
 
-                    <?php the_content(""); ?>
+                    <?php the_content(); ?>
 
+                    <?php wp_link_pages(); ?>
+
+                    <footer>
+                        <ul>
+                            <li><?php previous_post_link(); ?></li>
+                            <li>Categories: <?php the_category(', '); ?></li>
+                            <li><?php the_tags(); ?></li>
+                            <?php wp_link_pages( array(
+                                'before'           => '<li>' . __('Pages:'),
+                                'after'            => '</li>'
+                            )); ?>
+                            <li><?php edit_post_link("Edit"); ?></li>
+                            <li><?php next_post_link(); ?></li>
+                        </ul>
+                    </footer>
                 </article>
 
                 <?php comments_template(); ?>
@@ -25,5 +38,4 @@
                 <?php endwhile; ?>
                 <?php endif; ?>
             </div>
-        </div>
 <?php get_footer(); ?>
