@@ -26,7 +26,7 @@
                     </div>
 
                     <a class="logo" href="<?php echo home_url(); ?>">
-                        <img src="<?php bloginfo("template_url"); ?>/img/mozilla_antartica_logo.svg">
+                        <img src="<?php bloginfo("template_url"); ?>/img/mozilla_antarctica_logo.svg">
                         <h1><?php bloginfo("name"); ?></h1>
                     </a>
 
