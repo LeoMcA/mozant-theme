@@ -91,6 +91,7 @@ body > header a.logo:hover {
 
 body > header a.logo h1 {
 	font-size: 48px;
+	font-weight: bold;
 	line-height: 96px;
 }
 
