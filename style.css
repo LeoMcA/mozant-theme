@@ -78,6 +78,7 @@ small {
 
 body > header {
 	font: 12px/24px "Trebuchet MS", sans-serif;
+	background: url(img/snow.png) center 102px no-repeat;
 }
 
 body > header a.logo {
@@ -138,6 +139,7 @@ body > header nav {
 	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), 0 -2px 0 rgba(0, 0, 0, 0.5) inset;
 	border-radius: 5px;
 	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+	margin-top: 10px;
 	margin-bottom: 24px;
 	overflow: hidden;
 }
@@ -196,7 +198,7 @@ body > header nav input {
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.4) inset;
     float: right;
     font-size: 16px;
-    padding: 6px 6px 6px 32px;
+    padding: 7px 6px 6px 32px;
     margin: 5px 5px 7px;
     width: 170px;
 }
